@@ -1,0 +1,13 @@
+<h1>
+    {{name}}
+</h1>
+
+<div class="row">
+
+<app-product-widget *ngFor="let product of products" 
+[product] = "product"
+>
+
+</app-product-widget>
+
+</div>
