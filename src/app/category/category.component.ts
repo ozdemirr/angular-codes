@@ -9,16 +9,22 @@ export class CategoryComponent implements OnInit {
 
   products = [
     {
-      name: 'Blue-purple bouquet',
-      designedBy : 'Kadir'
+      name: 'Blue purple bouquet',
+      designedBy : 'Kadir',
+      id: 128379
     },
     {
-      name: 'Amsterdam Roses',
-      designedBy : 'Beyazlı'
+      name: 'BRose',
+      designedBy : 'Beyazlı',
+      id: 958318
     }
   ];
 
   name = 'Çiçek kategorisi';
+
+  onAddedToBasket(product) {
+      alert(product.name + ' sepete eklendi');
+  }
 
   constructor() { }
 
