@@ -1,3 +1,15 @@
-<div class="row">
-  Testing... Welcome
+<div class="container">
+
+  <div class="form-group">
+    <label>ngModel</label>
+    <input type="text" class="form-control" [(ngModel)]="bir">
+  </div>
+  <p>bir : {{bir}}</p>
+  <div class="form-group">
+    <label>local Referance</label>
+    <input type="text" class="form-control" #iki>
+  </div>
+  <p> iki : {{ikininDegeri}}</p>
+  <button type="button" class="btn btn-primary" (click) = guncelle(iki)>Güncelle</button>
+  
 </div>

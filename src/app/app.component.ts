@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'app';
+  ikininDegeri = '';
+
+  guncelle(iki: HTMLInputElement) {
+    this.ikininDegeri = iki.value;
+  }
 }
