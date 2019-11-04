@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  title = 'app';
-  ikininDegeri = '';
+  @ViewChild('iki', {static: true}) iki: ElementRef;
 
-  guncelle(iki: HTMLInputElement) {
-    this.ikininDegeri = iki.value;
+  bastir() {
+    alert(this.iki.nativeElement.value);
   }
+
 }
