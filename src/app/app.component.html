@@ -2,6 +2,15 @@
 
   <div class="row">
   
+    <button class="btn btn-primary" (click) = "ornek = Math.random(); ">Değiştir</button>
+
+    <button class="btn btn-primary" (click) = "destroy = true;">Destroy</button>
+
+    <app-alt [ornek] = "ornek"
+    *ngIf = "!destroy"
+    >
+    </app-alt>
+
   </div>
 
 </div>
