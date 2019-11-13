@@ -7,14 +7,21 @@ import { LoggingService } from './services/logging.service';
   styleUrls: ['./app.component.css'],
   providers : [LoggingService]
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
+
+  messages = [];
 
   constructor(private logging: LoggingService) {
 
   }
 
   ngOnInit() {
-    this.logging.log('component initiated');
+    this.messages = this.logging.messages;
   }
+
+  addMessage() {
+    this.logging.addMessage();
+  }
+
 
 }

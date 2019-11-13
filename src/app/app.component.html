@@ -2,6 +2,18 @@
 
   <div class="row">
   
+    <h1>App Component</h1>
+
+    <button class="btn btn-primary" (click)="addMessage()">yeni mesaj ekle</button>
+
+    <ul>
+      <li *ngFor = "let message of messages">
+        {{message}}
+      </li>
+    </ul>
+
+    <app-alt></app-alt>
+
   </div>
 
 </div>

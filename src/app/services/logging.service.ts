@@ -5,10 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class LoggingService {
 
-  constructor() { }
+  messages = [
+    'mesaj 1',
+    'mesaj 2'
+  ];
 
-  log(data) {
-    console.log('logged: ' + data);
+  constructor() {
+  }
+
+  addMessage() {
+    this.messages.push('yeni bir mesaj');
   }
 
 }
