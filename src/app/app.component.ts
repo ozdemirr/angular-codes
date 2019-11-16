@@ -1,20 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { LoggingService } from './services/logging.service';
+import { AccountService } from './services/account.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers : [LoggingService]
+  providers : []
 })
-export class AppComponent implements OnInit{
 
-  constructor(private logging: LoggingService) {
+export class AppComponent {
+
+  member = {};
+
+  constructor(private accountService: AccountService) {
 
   }
 
-  ngOnInit() {
-    this.logging.log('component initiated');
+  register() {
+    this.accountService.register(this.member);
   }
 
 }
