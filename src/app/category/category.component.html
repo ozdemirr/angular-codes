@@ -1,0 +1,21 @@
+<div class="row">
+
+<h1>Elektronik Kategorisi</h1>
+
+<div class="panel-group">
+
+        <div class="panel panel-default" *ngFor="let product of products">
+
+          <div class="panel-body">
+
+            <p>{{product.name}} - {{product.price}} TL</p>
+
+            <button type="button" class="btn btn-success" (click)="addToBasket(product)">Sepete Ekle</button>
+
+          </div>
+
+        </div>
+
+</div>
+
+</div>
