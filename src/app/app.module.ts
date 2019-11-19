@@ -5,23 +5,20 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import {Routes, RouterModule} from '@angular/router';
-import { AboutComponent } from './about/about.component';
+import { ProductComponent } from './product/product.component';
 import { HomeComponent } from './home/home.component';
-import { BasketComponent } from './basket/basket.component';
+
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'basket', component: BasketComponent},
-  {path: 'basket/payment', component: BasketComponent}
+  {path: 'product/:id', component: ProductComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
-    HomeComponent,
-    BasketComponent
+    ProductComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
