@@ -1,1 +1,13 @@
+<p>Zaman : {{ date | date:'HH:mm:ss' }}</p>
+
 <h1>{{product.name}}</h1>
+
+<ul>
+<li *ngFor="let otherProduct of products">
+    <ng-container *ngIf="otherProduct.id != product.id">
+        <a [routerLink]="['/product', otherProduct.id]">
+            <h3>{{otherProduct.name}}</h3>
+        </a>    
+    </ng-container>
+</li>
+</ul>

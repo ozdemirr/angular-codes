@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -10,6 +10,8 @@ export class ProductComponent implements OnInit {
 
   id: number;
   product: object;
+
+  date = new Date();
 
   products = [
     {
@@ -30,6 +32,14 @@ export class ProductComponent implements OnInit {
 
     this.product = this.products[this.id];
 
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.id = params['id'];
+        this.product = this.products[this.id];
+      }
+    );
+
   }
+
 
 }
