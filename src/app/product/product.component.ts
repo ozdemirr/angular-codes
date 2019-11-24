@@ -21,6 +21,7 @@ export class ProductComponent implements OnInit {
       name : 'tablet'
     }
   ];
+  addBasketDegeri: any;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -29,6 +30,14 @@ export class ProductComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
 
     this.product = this.products[this.id];
+
+    if(this.route.snapshot.queryParams.addToBasket) {
+      //sepete ekleme işlemleri
+      this.addBasketDegeri = this.route.snapshot.queryParams.addToBasket;
+
+      alert('sepete eklendi');
+
+    }
 
   }
 
