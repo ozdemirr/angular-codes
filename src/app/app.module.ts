@@ -7,18 +7,22 @@ import { AppComponent } from './app.component';
 import {Routes, RouterModule} from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import { HomeComponent } from './home/home.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'product/:id', component: ProductComponent}
+  {path: 'product/:id', component: ProductComponent, children : [
+    {path: 'detail', component: ProductDetailComponent}
+  ]}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    HomeComponent
+    HomeComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
