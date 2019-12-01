@@ -7,14 +7,15 @@ import { AppComponent } from './app.component';
 import {Routes, RouterModule} from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import { HomeComponent } from './home/home.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'product/:id', component: ProductComponent, children : [
-    {path: 'detail', component: ProductDetailComponent}
-  ]}
+  {path: 'product/:id', component: ProductComponent},
+  {path: 'not-found', component: PageNotFoundComponent},
+  {path: 'herhangiBirUrl', redirectTo: '/not-found'},
+  {path: '**', redirectTo: '/not-found'}
 ];
 
 @NgModule({
@@ -22,7 +23,7 @@ const appRoutes: Routes = [
     AppComponent,
     ProductComponent,
     HomeComponent,
-    ProductDetailComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
