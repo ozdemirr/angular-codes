@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  products = [
+    {
+      id: 0,
+      name : 'telefon'
+    },
+    {
+      id: 1,
+      name : 'tablet'
+    }
+  ];
+
 }
